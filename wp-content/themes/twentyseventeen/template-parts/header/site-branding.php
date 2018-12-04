@@ -10,29 +10,50 @@
 
 ?>
 <div class="site-branding">
+
 	<div class="wrap">
 
-		<?php the_custom_logo(); ?>
+
+		<div class="social">
+
+			<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
+
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'social',
+						'menu_class'     => 'social-links-menu',
+						'depth'          => 1,
+						'link_before'    => '<span>',
+						'link_after'     => '</span>',
+					) );
+				?>
+
+			</nav><!-- .social-navigation -->
+
+		</div>
+
 
 		<div class="site-branding-text">
-			<?php if ( is_front_page() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif; ?>
 
-			<?php
-			$description = get_bloginfo( 'description', 'display' );
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 
-			if ( $description || is_customize_preview() ) :
-			?>
-				<p class="site-description"><?php echo $description; ?></p>
-			<?php endif; ?>
+					<?php get_template_part( 'template-parts/header/header', 'logo' ); ?>
+
+				</a></h1>
+
+				<?php $description = get_bloginfo( 'description', 'display' ); ?>
+				<?php if ( $description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $description; ?></p>
+				<?php endif; ?>
+
 		</div><!-- .site-branding-text -->
 
-		<?php if ( ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) && ! has_nav_menu( 'top' ) ) : ?>
-		<a href="#content" class="menu-scroll-down"><?php echo twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll down to content', 'twentyseventeen' ); ?></span></a>
-	<?php endif; ?>
+		<div class="site-extra">
+
+			<a href="#"><i class="icon icon-search">&nbsp;</i></a>
+
+		</div>
 
 	</div><!-- .wrap -->
+
 </div><!-- .site-branding -->

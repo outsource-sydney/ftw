@@ -1,0 +1,74 @@
+#colophon {
+	background: $base-accent;
+	color: #fff;
+	overflow: hidden;
+	padding: calc(3 * #{$padding}) 0;
+
+	a {
+		color: #fff;
+	}
+	p {
+		margin: 0;
+	}
+	.wrap {
+
+		&.wrap-main > * {
+			text-align: center;
+		}
+	}
+	.branding {
+		padding: $padding 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: rotate(-90deg);
+		transform-origin: 100% 0;
+
+		img {
+			max-height: 32px;
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+#colophon {
+	.menu-social-container {
+		margin-bottom: calc(1.5 * #{$padding});
+
+		a {
+			height: calc(2 * #{$padding});
+			width: calc(2 * #{$padding});
+		}
+	}
+}
+#colophon {
+	.awards {
+		align-items: center;
+		display: flex;
+		margin: 0 0 calc(1.5 * #{$padding});
+		justify-content: center;
+
+		img {
+				margin: 0 calc(.5 * #{$padding});
+				max-height: 60px;
+		}
+	}
+}
+
+#border {
+	box-shadow: 0 0 0 calc(.5 * #{$padding}) $base-accent inset;
+	height: 100vh;
+	left: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 9999;
+}
+
+/*
+
+	POPUP STYLES
+
+*/

@@ -84,6 +84,7 @@ function twentyseventeen_get_svg( $args = array() ) {
 
 	// Begin SVG markup.
 	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '';
 
 	// Display the title.
 	if ( $args['title'] ) {

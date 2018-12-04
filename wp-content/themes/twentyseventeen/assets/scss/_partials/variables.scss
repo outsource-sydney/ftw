@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+5.0 Typography
+--------------------------------------------------------------*/
+
+$padding: 1.2rem;
+
+$main-font-color: #151f28;
+$body-text: #4d4d4d;
+$wrap-width: 72rem;
+
+$body-color: #f2f2f2;
+$footer-color: #888;
+$light-grey: #e6e7e8;
+$base-accent: #f16c6b;
+$base-accent-light: #5BBBB7;
+$overlay: rgba(0, 0, 0, .25);
+$border-color: rgba(0, 0, 0, .2);
+
+$orange: #e06855;
+$light-blue: #5bbbb7;
+
+$cubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+$hover-offset: 7px;
+$hover-delay: 100ms;
+
+$sidebar-width: 320px;
+
+@mixin absolute-center {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+@mixin full-size {
+	height: 100%;
+	width: 100%;
+}
+@mixin spin {
+	animation: spin 1s forwards infinite;
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,150 @@
+
+/* fullsize image */
+img.thumbsize {
+  filter: blur(10px);
+}
+img.fullsize {
+  opacity: 0;
+  transition: opacity 2s;
+
+  &.init{
+      opacity: 1;
+  }
+}
+
+/* navigation */
+
+#masthead { // this is the wrap stuff
+	background: #fff;
+	display: block;
+  margin-bottom: calc(2 * #{$padding});
+  overflow: hidden;
+  padding: calc(.5 * #{$padding}) 0 calc(2 * #{$padding});
+	position: relative;
+	width: 100%;
+	z-index: 100;
+
+	.wrap {
+		align-items: center;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: space-around;
+    position: relative;
+		width: $wrap-width;
+	}
+  .site-branding .wrap {
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+  }
+	.menu {
+		display: flex;
+		justify-content: center;
+	}
+  .menu-toggle {
+    display: none;
+  }
+}
+
+
+.navigation-top {
+	align-items: flex-end;
+	display: flex;
+  margin-bottom: calc(1 * #{$padding});
+
+	li {
+		margin-left: calc(.25 * #{$padding});
+		margin-right: calc(.25 * #{$padding});
+		position: relative;
+	}
+	a {
+		display: inline-block;
+		font-weight: 500;
+		padding: calc(.5 * #{$padding});
+		position: relative;
+    text-transform: uppercase;
+	}
+}
+.site-branding-text { // logo stuff
+  svg {
+    width: 28rem;
+  }
+  .site-description {
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+/*
+
+	social
+
+*/
+
+.menu-social-container {
+
+	ul {
+
+		li {
+			display: inline-block;
+		}
+		a {
+			border-radius: 9999px;
+			box-shadow: 0 0 0 1px $base-accent;
+			display: inline-block;
+			height: calc(1.25 * #{$padding});
+			margin-left: calc(.25 * #{$padding});
+			position: relative;
+			text-transform: uppercase;
+			width: calc(1.25 * #{$padding});
+
+			span {
+				display: none;
+			}
+		}
+		a,
+		a:before {
+			color: $base-accent;
+		}
+	}
+}
+
+/*
+
+	icons
+
+*/
+
+.menu-social-container {
+
+	li {
+
+		&:before {
+			content: none !important;
+		}
+		a:before {
+			display: inline-block;
+			font-family: "fontawesome";
+			font-size: .85rem;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: normal;
+			left: 50%;
+			line-height: 1em;
+			margin-right: .2em;
+			position: absolute;
+			speak: none;
+			text-align: center;
+			text-decoration: inherit;
+			text-transform: none;
+			top: 50%;
+			transform: translate3d(-55%, -45%, 0);
+			width: 1em;
+		}
+		&.icon-facebook a:before { content: '\f09a'; }
+		&.icon-instagram a:before { content: '\f16d'; } /* '' */
+		&.icon-pinterest a:before { content: '\f231'; } /* '' */
+	}
+}

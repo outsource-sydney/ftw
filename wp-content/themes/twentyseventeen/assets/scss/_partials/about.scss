@@ -1,0 +1,23 @@
+section.team {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	padding-top: 0;
+	
+	.wrap{
+		display: flex; 
+		margin-left: -$padding;
+		margin-right: -$padding;
+		max-width: calc(100% + (1 * #{$padding}));
+	}
+	.block {
+		width: 50%;
+		padding-left: calc(.5 * #{$padding});
+		padding-right: calc(.5 * #{$padding});
+		
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+}

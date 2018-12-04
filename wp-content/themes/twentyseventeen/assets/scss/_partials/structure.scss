@@ -1,0 +1,33 @@
+body.home {
+	background-color: $body-color;
+}
+
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	padding-left: $padding;
+	padding-right: $padding;
+	position: relative;
+	width: $wrap-width;
+}
+section {
+	padding: 3.2rem 0;
+}
+div {
+	box-sizing: border-box;
+}
+
+$int-padding: $padding; // used for the following calculations
+
+.col-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.col-1 {
+	width: calc(((2 * 100%) - #{$int-padding}) / 3);
+}
+.col-2 {
+	width: calc((100% - (2 * #{$int-padding})) / 3);
+}

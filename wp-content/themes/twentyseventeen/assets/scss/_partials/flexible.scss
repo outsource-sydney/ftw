@@ -1,0 +1,253 @@
+/*
+
+
+
+*/
+
+.general-content {
+
+	h2 {
+		text-align: left;
+	}
+	.wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+	.col-1 {
+		width: calc(100% - #{$sidebar-width} - (2 * #{$padding}));
+	}
+	.col-2 {
+		width: $sidebar-width;
+	}
+}
+
+/*
+
+	form
+
+*/
+
+.general-content .wpcf7 {
+	background: $body-color;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+	padding: calc(1 * #{$padding});
+}
+
+/*
+
+
+
+*/
+
+.application-content-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.block {
+		align-items: center;
+		display: flex;
+		overflow: hidden;
+		margin-bottom: calc(2 * #{$padding});
+		position: relative;
+		width: calc(50% - #{$padding});
+
+		> img {
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			width: 100%;
+		}
+	}
+}
+
+.application-content-container .block {
+
+	* {
+		color: #fff;
+	}
+	&:before {
+		background: $light-blue;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		mix-blend-mode: multiply;
+		position: absolute;
+		top: 0;
+		transition: all .3s $cubic;
+		width: 50%;
+		z-index: 1;
+	}
+	> div {
+		padding: calc(2 * #{$padding}) $padding;
+		position: relative;
+		width: 50%;
+		z-index: 10;
+
+		&.application-content {
+			opacity: 0;
+			transform: translateY(10px);
+			transition: all .3s $cubic;
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	&:hover{
+		&:before {
+			background: $base-accent;
+			width: 100%;
+		}
+		.application-content {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+/*
+
+	file download button
+
+*/
+
+.file-download {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 280px;
+
+	.file-header {
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding-bottom: 50%;
+		position: relative;
+
+		&:after {
+			background: $base-accent-light;
+			border-radius: 9999px;
+			content: '';
+			display: block;
+			height: 0;
+			opacity: .6;
+			padding-bottom: 90%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform: translate3d(50%, -50%, 0);
+			transition: all .35s $cubic;
+			width: 90%;
+		}
+
+		img {
+			height: 100%;
+			left: 0;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			transition: all 5s;
+			width: 100%;
+		}
+
+		.icon {
+			color: #fff;
+			font-size: 2.8rem;
+			margin-right: calc(.5 * #{$padding});
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-70%) translate3d(0, 0, 0);
+			transition: all .35s .35s $cubic;
+			z-index: 10;
+		}
+	}
+	&:hover {
+		.file-header {
+			&:after {
+				padding-bottom: 240%;
+				width: 240%;
+			}
+			img {
+				filter: grayscale(1) contrast(2.4);
+			}
+			.icon {
+				transform: translateY(-50%) translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+.file-download .file-content {
+	display: block;
+	padding: $padding;
+
+	* {
+		text-align: center;
+	}
+}
+
+/*
+
+	file block
+
+*/
+
+.file-content-block {
+	background: $body-color;
+}
+
+.file-window {
+	overflow: hidden;
+
+	.file-container {
+		display: flex;
+		width: 9999px;
+		justify-content: flex-start;
+		transition: all 1s $cubic;
+	}
+}
+.file-window .block {
+	width: calc((#{$full-width} - ( 2 * #{$padding} )) / 3);
+}
+.file-window .block .file-download {
+	background: #fff;
+	display: block;
+	margin: $padding auto;
+}
+
+.file-content-block {
+
+	.gallery-slider {
+
+		> a {
+				background: rgba(0, 0, 0, .2);
+		}
+	}
+}
+
+/*
+
+	benefits
+
+*/
+
+.benefits-table {
+	background: $body-color;
+
+	table {
+
+		th, td {
+			border-bottom: 1px solid rgba(0, 0, 0, .2);
+			font-weight: 300;
+			min-width: 240px;
+			padding-top: $padding;
+			padding-bottom: $padding;
+			text-align: left;
+		}
+	}
+}
